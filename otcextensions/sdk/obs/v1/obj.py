@@ -286,8 +286,12 @@ class Object(_base.BaseResource):
 
         _logger.debug(response.content)
 
-        with open(filename, 'wb') as f:
-            f.write(response.content)
+        if filename == None:
+            return response.content
+        else:
+            with open(filename, 'wb') as f:
+                f.write(response.content)
+            
 
         return
 
