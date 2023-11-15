@@ -294,7 +294,8 @@ class Proxy(sdk_proxy.Proxy):
             self,
             endpoint_override=endpoint,
             requests_auth=self._get_req_auth(endpoint),
-            filename=attrs.pop('file', '-'))
+            filename=attrs.pop('file', None))
+        
 
     def stream_object(self, obj, container=None, chunk_size=1024, **attrs):
         """Stream the data contained inside an object.
